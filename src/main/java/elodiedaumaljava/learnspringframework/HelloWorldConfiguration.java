@@ -1,5 +1,6 @@
 package elodiedaumaljava.learnspringframework;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -46,8 +47,8 @@ public class HelloWorldConfiguration {
  }
 
  @Bean
- public Person person3(String name, int age, Adress adress3) {
-  var person = new Person(name, age, adress3);
+ public Person person3(String name2, int age2, @Qualifier("adress3") Adress adress3) {
+  var person = new Person(name2, age2, adress3);
   return person;
  }
 
@@ -59,6 +60,7 @@ public class HelloWorldConfiguration {
  }
 
  @Bean(name = "adress3")
+ @Qualifier("adress3")
  public Adress adress3() {
 
   return new Adress("street name", 01, 29013, "Montcul");
