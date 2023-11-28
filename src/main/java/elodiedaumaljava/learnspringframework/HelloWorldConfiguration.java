@@ -2,6 +2,7 @@ package elodiedaumaljava.learnspringframework;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 record Person(String name, int age, Adress adress) {
 }
@@ -45,15 +46,22 @@ public class HelloWorldConfiguration {
  }
 
  @Bean
- public Person person3(String name, int age, Adress adress2) {
-  var person = new Person(name, age, adress2);
+ public Person person3(String name, int age, Adress adress3) {
+  var person = new Person(name, age, adress3);
   return person;
  }
 
  @Bean(name = "adress2")
+ @Primary
  public Adress adress() {
 
   return new Adress("Calle Gardenias", 19, 29013, "Malaga");
+ }
+
+ @Bean(name = "adress3")
+ public Adress adress3() {
+
+  return new Adress("street name", 01, 29013, "Montcul");
  }
 
 }
