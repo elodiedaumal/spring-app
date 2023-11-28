@@ -1,6 +1,6 @@
 package elodiedaumaljava.learnspringframework.game;
 
-public class Pacman {
+public class Pacman implements GamingConsole {
 
  public void up() {
   System.out.println("Move up");

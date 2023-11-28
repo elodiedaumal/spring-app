@@ -2,9 +2,9 @@ package elodiedaumaljava.learnspringframework.game;
 
 public class GameRunner {
  // MarioGame game;
- private Pacman game;
+ private GamingConsole game;
 
- public GameRunner(Pacman game) {
+ public GameRunner(GamingConsole game) {
   this.game = game;
 
  }
