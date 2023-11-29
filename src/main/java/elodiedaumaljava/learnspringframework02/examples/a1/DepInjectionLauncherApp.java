@@ -15,7 +15,7 @@ class YourBuisnessClass {
 
  Dependency2 dependency2;
 
- @Autowired
+ // @Autowired
  public YourBuisnessClass(Dependency1 dependency1, Dependency2 dependency2) {
   super();
   this.dependency1 = dependency1;
