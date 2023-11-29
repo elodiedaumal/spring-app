@@ -13,14 +13,6 @@ import elodiedaumaljava.learnspringframework02.game.GamingConsole;
 @ComponentScan("elodiedaumaljava.learnspringframework02.game")
 public class App03GamingSpring {
 
- @Bean
- public GameRunner gameRunner(GamingConsole game) {
-
-  var gameRunner = new GameRunner(game);
-
-  return gameRunner;
- }
-
  public static void main(String[] args) {
 
   try (var context = new AnnotationConfigApplicationContext(App03GamingSpring.class)) {
