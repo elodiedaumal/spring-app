@@ -1,5 +1,8 @@
 package elodiedaumaljava.learnspringframework02.game;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Pacman implements GamingConsole {
 
  public void up() {

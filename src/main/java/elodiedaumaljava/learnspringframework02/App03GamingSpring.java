@@ -2,14 +2,28 @@ package elodiedaumaljava.learnspringframework02;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import elodiedaumaljava.learnspringframework.game.GameConfiguration;
-import elodiedaumaljava.learnspringframework.game.GameRunner;
-import elodiedaumaljava.learnspringframework.game.GamingConsole;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
+import elodiedaumaljava.learnspringframework02.game.GameRunner;
+import elodiedaumaljava.learnspringframework02.game.GamingConsole;
+
+@Configuration
+@ComponentScan("elodiedaumaljava.learnspringframework02.game")
 public class App03GamingSpring {
+
+ @Bean
+ public GameRunner gameRunner(GamingConsole game) {
+
+  var gameRunner = new GameRunner(game);
+
+  return gameRunner;
+ }
+
  public static void main(String[] args) {
 
-  try (var context = new AnnotationConfigApplicationContext(GameConfiguration.class)) {
+  try (var context = new AnnotationConfigApplicationContext(App03GamingSpring.class)) {
    context.getBean(GamingConsole.class).up();
    context.getBean(GameRunner.class).run();
 
