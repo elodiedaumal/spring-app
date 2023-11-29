@@ -11,11 +11,11 @@ import elodiedaumaljava.learnspringframework02.game.GamingConsole;
 
 @Configuration
 @ComponentScan("elodiedaumaljava.learnspringframework02.game")
-public class App03GamingSpring {
+public class GamingAppLuncherApplication {
 
  public static void main(String[] args) {
 
-  try (var context = new AnnotationConfigApplicationContext(App03GamingSpring.class)) {
+  try (var context = new AnnotationConfigApplicationContext(GamingAppLuncherApplication.class)) {
    context.getBean(GamingConsole.class).up();
    context.getBean(GameRunner.class).run();
 
